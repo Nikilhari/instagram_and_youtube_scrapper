@@ -1,0 +1,58 @@
+
+
+.resultContainer {
+  background-color: var(--result-background);
+  border: 1px solid var(--result-border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.title {
+  color: var(--result-title-color);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.commentList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment {
+  background-color: var(--comment-background);
+  border: 1px solid var(--comment-border);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  color: var(--comment-text-color);
+  transition: background-color 0.3s ease;
+}
+
+.comment:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.post {
+  margin-bottom: 15px;
+  border: 1px solid var(--result-border);
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.postTitle {
+  cursor: pointer;
+  color: var(--result-title-color);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.postContent {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid var(--result-border);
+}

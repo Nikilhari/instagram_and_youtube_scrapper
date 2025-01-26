@@ -1,0 +1,106 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --button-background: #007bff;
+  --button-text: #ffffff;
+  --header-background: #f8f9fa;
+  --tab-background: #f8f9fa;
+  --tab-active-background: #007bff;
+  --tab-active-color: #ffffff;
+  --tab-inactive-color: #495057;
+  --error-color: #dc3545;
+  --loading-color: #007bff;
+  --form-background: #ffffff;
+  --form-border: #ced4da;
+  --form-text-color: #495057;
+  --form-label-color: #6c757d;
+  --form-button-background: #007bff;
+  --form-button-text: #ffffff;
+  --result-background: #ffffff;
+  --result-border: #ced4da;
+  --result-title-color: #007bff;
+  --comment-background: #f8f9fa;
+  --comment-border: #e9ecef;
+  --comment-text-color: #495057;
+}
+.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --button-background: #1e88e5;
+  --button-text: #ffffff;
+  --header-background: #1f1f1f;
+  --tab-background: #2c2c2c;
+  --tab-active-background: #1e88e5;
+  --tab-active-color: #ffffff;
+  --tab-inactive-color: #adb5bd;
+  --error-color: #ff6b6b;
+  --loading-color: #1e88e5;
+  --form-background: #1f1f1f;
+  --form-border: #444;
+  --form-text-color: black;
+  --form-label-color: #adb5bd;
+  --form-button-background: #1e88e5;
+  --form-button-text: #ffffff;
+  --result-background: #2c2c2c;
+  --result-border: #444;
+  --result-title-color: #1e88e5;
+  --comment-background: #3a3a3a;
+  --comment-border: #555;
+  --comment-text-color: #e9ecef;
+}
+
+.app {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.header {
+  background-color: var(--header-background);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.theme-toggle {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
