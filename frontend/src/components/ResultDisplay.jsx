@@ -8,7 +8,7 @@ function ResultDisplay({ result }) {
     // YouTube result
     return (
       <div className={styles.resultContainer}>
-        <h2 className={styles.title}>{result.video_title}</h2>
+        <h2 className={styles.title}>TITLE : {result.video_title}</h2>
         <p>
           <strong>Channel:</strong> {result.channel_name}
         </p>

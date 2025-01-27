@@ -30,6 +30,7 @@ input {
   font-size: 1rem;
   color: var(--form-text-color);
   transition: border-color 0.3s ease;
+  color: black;
 }
 
 input:focus {
