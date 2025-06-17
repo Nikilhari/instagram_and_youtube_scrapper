@@ -11,13 +11,36 @@ function YouTubeForm({ onSubmit }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, action) => {
     e.preventDefault();
-    onSubmit(formData);
+    if (action === "scrape") {
+      onSubmit(formData);
+    } else if (action === "download") {
+      downloadVideo(formData.video_url);
+    }
+  };
+
+  const downloadVideo = (videoUrl) => {
+    if (!videoUrl) return alert("Please enter a YouTube URL");
+
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "http://localhost:3000/download";
+    form.target = "_blank";
+
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "url";
+    input.value = videoUrl;
+
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form className={styles.form}>
       <div className={styles.formGroup}>
         <label htmlFor="video_url">Video URL</label>
         <input
@@ -39,9 +62,22 @@ function YouTubeForm({ onSubmit }) {
           required
         />
       </div>
-      <button type="submit" className={styles.submitButton}>
-        Scrape YouTube
-      </button>
+      <div className={styles.buttonGroup}>
+        <button
+          type="submit"
+          className={styles.submitButton}
+          onClick={(e) => handleSubmit(e, "scrape")}
+        >
+          Scrape YouTube
+        </button>
+        <button
+          type="button"
+          className={styles.downloadButton}
+          onClick={(e) => handleSubmit(e, "download")}
+        >
+          Download Video
+        </button>
+      </div>
     </form>
   );
 }

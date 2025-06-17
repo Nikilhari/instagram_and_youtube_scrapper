@@ -120,7 +120,7 @@ def scrape_youtube_data(video_url, max_comments):
         subscriber_count = "Subscriber count not available"
 
     comments = []
-    scroll_pause = 2
+    scroll_pause = 5
     last_height = driver.execute_script("return document.documentElement.scrollHeight")
 
     while len(comments) < max_comments:
